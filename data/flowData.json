@@ -1,0 +1,244 @@
+[
+   {
+     "id": "SRC-GCS-1",
+     "type": "custominput",
+     "data": { "nodeType": "Source", "nodeName": "GCS" },
+     "position": { "x": 100, "y": 200 },
+     "__rf": {
+       "position": { "x": 100, "y": 200 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": null
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "SRC-CSV-2",
+     "type": "custominput",
+     "data": { "nodeType": "Source", "nodeName": "CSV" },
+     "position": { "x": 100, "y": 300 },
+     "__rf": {
+       "position": { "x": 100, "y": 300 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": null
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "SRC-DATABASE-3",
+     "type": "custominput",
+     "data": { "nodeType": "Source", "nodeName": "DATABASE" },
+     "position": { "x": 100, "y": 400 },
+     "__rf": {
+       "position": { "x": 100, "y": 400 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": null
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "TRA-AUDIO-1",
+     "type": "customnode",
+     "data": { "nodeType": "Transform", "nodeName": "AUDIO" },
+     "position": { "x": 300, "y": 200 },
+     "__rf": {
+       "position": { "x": 429.99999999999994, "y": 202 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": [
+           { "position": "left", "x": -4, "y": 29, "width": 6, "height": 6 }
+         ]
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "TRA-SPEECH-2",
+     "type": "customnode",
+     "data": { "nodeType": "Transform", "nodeName": "SPEECH" },
+     "position": { "x": 300, "y": 300 },
+     "__rf": {
+       "position": { "x": 300, "y": 300 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": [
+           { "position": "left", "x": -4, "y": 29, "width": 6, "height": 6 }
+         ]
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "TRA-DOCUMENT-3",
+     "type": "customnode",
+     "data": { "nodeType": "Transform", "nodeName": "DOCUMENT" },
+     "position": { "x": 300, "y": 400 },
+     "__rf": {
+       "position": { "x": 300, "y": 400 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": [
+           { "position": "left", "x": -4, "y": 29, "width": 6, "height": 6 }
+         ]
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "TRA-FORM-4",
+     "type": "customnode",
+     "data": { "nodeType": "Transform", "nodeName": "FORM" },
+     "position": { "x": 300, "y": 500 },
+     "__rf": {
+       "position": { "x": 300, "y": 500 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": [
+           { "position": "right", "x": 148, "y": 29, "width": 6, "height": 6 }
+         ],
+         "target": [
+           { "position": "left", "x": -4, "y": 29, "width": 6, "height": 6 }
+         ]
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "TAR-BIG QUERY-1",
+     "type": "customoutput",
+     "data": { "nodeType": "Target", "nodeName": "BIG QUERY" },
+     "position": { "x": 500, "y": 200 },
+     "__rf": {
+       "position": { "x": 642, "y": 202 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": null,
+         "target": [
+           { "position": "left", "x": -4, "y": 29, "width": 6, "height": 6 }
+         ]
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "id": "TAR-GCS-2",
+     "type": "customoutput",
+     "data": { "nodeType": "Target", "nodeName": "GCS" },
+     "position": { "x": 500, "y": 300 },
+     "__rf": {
+       "position": { "x": 652, "y": 355 },
+       "width": 150,
+       "height": 64,
+       "handleBounds": {
+         "source": null,
+         "target": [
+           { "position": "left", "x": -4, "y": 29, "width": 6, "height": 6 }
+         ]
+       },
+       "isDragging": false
+     }
+   },
+   {
+     "source": "SRC-GCS-1",
+     "target": "TRA-AUDIO-1",
+     "id": "reactflow__edge-SRC-GCS-1-TRA-AUDIO-1",
+     "type": "default"
+   },
+   {
+     "source": "SRC-CSV-2",
+     "target": "TRA-SPEECH-2",
+     "id": "reactflow__edge-SRC-CSV-2-TRA-SPEECH-2",
+     "type": "default"
+   },
+   {
+     "source": "SRC-DATABASE-3",
+     "target": "TRA-SPEECH-2",
+     "id": "reactflow__edge-SRC-DATABASE-3-TRA-SPEECH-2",
+     "type": "default"
+   },
+   {
+     "source": "SRC-DATABASE-3",
+     "target": "TRA-FORM-4",
+     "id": "reactflow__edge-SRC-DATABASE-3-TRA-FORM-4",
+     "type": "default"
+   },
+   {
+     "source": "SRC-DATABASE-3",
+     "target": "TRA-DOCUMENT-3",
+     "id": "reactflow__edge-SRC-DATABASE-3-TRA-DOCUMENT-3",
+     "type": "default"
+   },
+   {
+     "source": "SRC-CSV-2",
+     "target": "TRA-AUDIO-1",
+     "id": "reactflow__edge-SRC-CSV-2-TRA-AUDIO-1",
+     "type": "default"
+   },
+   {
+     "source": "TRA-AUDIO-1",
+     "target": "TAR-GCS-2",
+     "id": "reactflow__edge-TRA-AUDIO-1-TAR-GCS-2",
+     "type": "default"
+   },
+   {
+     "source": "TRA-AUDIO-1",
+     "target": "TAR-BIG QUERY-1",
+     "id": "reactflow__edge-TRA-AUDIO-1-TAR-BIG QUERY-1",
+     "type": "default"
+   },
+   {
+     "source": "TRA-SPEECH-2",
+     "target": "TRA-AUDIO-1",
+     "id": "reactflow__edge-TRA-SPEECH-2-TRA-AUDIO-1",
+     "type": "default"
+   },
+   {
+     "source": "TRA-DOCUMENT-3",
+     "target": "TAR-GCS-2",
+     "id": "reactflow__edge-TRA-DOCUMENT-3-TAR-GCS-2",
+     "type": "default"
+   },
+   {
+     "source": "TRA-SPEECH-2",
+     "target": "TAR-GCS-2",
+     "id": "reactflow__edge-TRA-SPEECH-2-TAR-GCS-2",
+     "type": "default"
+   },
+   {
+     "source": "TRA-FORM-4",
+     "target": "TAR-BIG QUERY-1",
+     "id": "reactflow__edge-TRA-FORM-4-TAR-BIG QUERY-1",
+     "type": "default"
+   }
+ ]
