@@ -28,18 +28,21 @@ let nodeExtractor = (flowData) => {
 let chainBuilder = (node, chain, inputData) => {
 
     chain.push(node.data.id);
-    let lookupFuncName = node.data.data.nodeType + node.data.data.nodeName;  //gives the name of the function in the lookup table
-    outputURL = lookups.flow_func[lookupFuncName](inputData);
-    lookups.chain_url[chain] = outputURL;
 
-    console.log(lookups.url_data[outputURL])
+    let lookupFuncName = node.data.data.nodeType + node.data.data.nodeName;  //gives the name of the function in the lookup table
+    console.log(lookupFuncName + '--->' + lookups.url_data[inputData])
+    outputURL = lookups.flow_func[lookupFuncName](inputData);
+
+
+    //console.log(lookups.url_data[outputURL])
     //console.log('func is ' + lookupFuncName + ', data is ' + lookups.url_data[inputData] + ' outputURL is ' + outputURL)
     if (node.rightNodes.length){
         for (n of node.rightNodes){
             chainBuilder(n, chain.slice(0), outputURL);
         }
     }
-
+    lookups.chain_url[chain.slice(0)] = outputURL;
+    //console.log(lookups.chain_url[chain] + '    ' + chain)
 }
 
 //starting point for the chain Builder
