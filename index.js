@@ -5,7 +5,7 @@ const cloudFunctions = require('./cloudFunctions.js');
 const lookups = require('./lookups.js')
 
 //read JSON and parse to JS object, in the real app this should be extracted from database
-let rawdata = fs.readFileSync('data/flowData2.json');
+let rawdata = fs.readFileSync('data/flowData.json');
 let flowData = JSON.parse(rawdata);
 
 //this function takes the raw "flowData" and returns a data object that contains all Nodes with referential links as a tree structure (see Node class)
@@ -28,27 +28,19 @@ let nodeExtractor = (flowData) => {
 let chainBuilder = (node, chain, inputData) => {
 
     chain.push(node.data.id);
-    //console.log(chain);
 
     let lookupFuncName = node.data.data.nodeType + node.data.data.nodeName;  //gives the name of the function in the lookup table
-    //console.log(lookupFuncName + '--->' + lookups.url_data[inputData])
-    //console.log('pizza' + lookups.chain_url[chain]);
+
     let outputURL = lookups.flow_func[lookupFuncName](inputData);
     lookups.chain_url[chain.slice(0)] = outputURL;
 
-
-    //console.log(lookups.url_data[outputURL])
-    //console.log('func is ' + lookupFuncName + ', data is ' + lookups.url_data[inputData] + ' outputURL is ' + outputURL)
     if (node.rightNodes.length){
         for (n of node.rightNodes){
-            //console.log(chain)
-            //console.log(lookups.chain_url[chain])
-            //console.log(lookups.url_data[lookups.chain_url[chain]])
+
             chainBuilder(n, chain.slice(0), outputURL);
         }
     }
 
-    //console.log(lookups.chain_url[chain] + '    ' + chain)
     console.log(chain);
 }
 

@@ -47,7 +47,6 @@ let lookups = {
             return outputURL;
         },
         'TransformAUDIO' : (url) => {
-            //console.log('broken url is ' + url)
             let inputData = lookups.url_data[url];
             let outputData = inputData + ' TransformAUDIO has processed this... ';
             let outputURL = 'gs://url_' + Math.random().toString(35).substring(7);
