@@ -5,7 +5,7 @@ const cloudFunctions = require('./cloudFunctions.js');
 const lookups = require('./lookups.js')
 
 //read JSON and parse to JS object, in the real app this should be extracted from database
-let rawdata = fs.readFileSync('data/flowData.json');
+let rawdata = fs.readFileSync('data/flowData2.json');
 let flowData = JSON.parse(rawdata);
 
 //this function takes the raw "flowData" and returns a data object that contains all Nodes with referential links as a tree structure (see Node class)
@@ -25,30 +25,42 @@ let nodeExtractor = (flowData) => {
 }
 
 // this recursive function takes a node object and recursively parses the data to output execution "chains" as a 2-dimensional array of Node id's
-let chainBuilder = (node, chain, chainList) => {
+let chainBuilder = (node, chain, inputData) => {
+
     chain.push(node.data.id);
+    let lookupFuncName = node.data.data.nodeType + node.data.data.nodeName;  //gives the name of the function in the lookup table
+    outputURL = lookups.flow_func[lookupFuncName](inputData);
+    lookups.chain_url[chain] = outputURL;
+
+    console.log(lookups.url_data[outputURL])
+    //console.log('func is ' + lookupFuncName + ', data is ' + lookups.url_data[inputData] + ' outputURL is ' + outputURL)
     if (node.rightNodes.length){
         for (n of node.rightNodes){
-            chainList = chainBuilder(n, chain.slice(0), chainList);
+            chainBuilder(n, chain.slice(0), outputURL);
         }
     }
-    else{
-        chainList.push(chain)
-    }
-    return chainList;
+
 }
 
 //starting point for the chain Builder
 let chainBuilderStart = (extractedData) => {
-    let chainList = [];
     for (node in extractedData){
         if (extractedData[node].data.data.nodeType == 'Source'){
-            chainBuilder(extractedData[node],[],chainList);
+            let inputData = '';
+            chainBuilder(extractedData[node],[], inputData);
         }
     }
-    return chainList;
 }
 
-console.log(chainBuilderStart(nodeExtractor(flowData)));
+chainBuilderStart(nodeExtractor(flowData));
 
-console.log(cloudFunctions.TransformVIDEO('url1'));
+console.log(lookups.url_data);
+console.log(lookups.chain_url);
+
+
+
+
+
+// let outputURL = lookups.flow_func.TransformVIDEO('gs://url_100')
+// console.log(lookups.url_data[outputURL]);
+// console.log(nodeExtractor(flowData))

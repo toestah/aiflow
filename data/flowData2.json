@@ -1,0 +1,153 @@
+[
+    {
+      "id": "SRC-DATABASE-1",
+      "type": "custominput",
+      "data": {
+        "nodeType": "Source",
+        "nodeName": "DATABASE"
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "position": {
+        "x": 100,
+        "y": 200
+      },
+      "__rf": {
+        "position": {
+          "x": 100,
+          "y": 200
+        },
+        "width": null,
+        "height": null,
+        "handleBounds": {},
+        "isDragging": false
+      }
+    },
+    {
+      "id": "TRA-AUDIO-1",
+      "type": "customnode",
+      "data": {
+        "nodeType": "Transform",
+        "nodeName": "AUDIO"
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "position": {
+        "x": 299,
+        "y": 198
+      },
+      "__rf": {
+        "position": {
+          "x": 299,
+          "y": 198
+        },
+        "width": null,
+        "height": null,
+        "handleBounds": {},
+        "isDragging": false
+      }
+    },
+    {
+      "id": "TAR-GCS-1",
+      "type": "customoutput",
+      "data": {
+        "nodeType": "Target",
+        "nodeName": "GCS"
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "position": {
+        "x": 500,
+        "y": 200
+      },
+      "__rf": {
+        "position": {
+          "x": 500,
+          "y": 200
+        },
+        "width": null,
+        "height": null,
+        "handleBounds": {},
+        "isDragging": false
+      }
+    },
+    {
+      "id": "TRA-VIDEO-2",
+      "type": "customnode",
+      "data": {
+        "nodeType": "Transform",
+        "nodeName": "VIDEO"
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "position": {
+        "x": 300,
+        "y": 300
+      },
+      "__rf": {
+        "position": {
+          "x": 300,
+          "y": 300
+        },
+        "width": null,
+        "height": null,
+        "handleBounds": {},
+        "isDragging": false
+      }
+    },
+    {
+      "id": "SRC-UPLOAD-2",
+      "type": "custominput",
+      "data": {
+        "nodeType": "Source",
+        "nodeName": "UPLOAD"
+      },
+      "sourcePosition": "right",
+      "targetPosition": "left",
+      "position": {
+        "x": 100,
+        "y": 300
+      },
+      "__rf": {
+        "position": {
+          "x": 100,
+          "y": 300
+        },
+        "width": null,
+        "height": null,
+        "handleBounds": {},
+        "isDragging": false
+      }
+    },
+    {
+      "source": "SRC-DATABASE-1",
+      "target": "TRA-VIDEO-2",
+      "id": "reactflow__edge-SRC-DATABASE-1-TRA-VIDEO-2",
+      "type": "default"
+    },
+    {
+      "source": "SRC-DATABASE-1",
+      "target": "TRA-AUDIO-1",
+      "id": "reactflow__edge-SRC-DATABASE-1-TRA-AUDIO-1",
+      "type": "default"
+    },
+    {
+      "source": "TRA-AUDIO-1",
+      "target": "TAR-GCS-1",
+      "id": "reactflow__edge-TRA-AUDIO-1-TAR-GCS-1",
+      "type": "default"
+    },
+    {
+      "source": "TRA-VIDEO-2",
+      "target": "TAR-GCS-1",
+      "id": "reactflow__edge-TRA-VIDEO-2-TAR-GCS-1",
+      "type": "default"
+    },
+    {
+      "source": "SRC-UPLOAD-2",
+      "target": "TRA-VIDEO-2",
+      "id": "reactflow__edge-SRC-UPLOAD-2-TRA-VIDEO-2",
+      "type": "default"
+    }
+  ]
+  
