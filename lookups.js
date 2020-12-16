@@ -86,7 +86,7 @@ let lookups = {
             let outputData = inputData + ' and finally, it has been stored into TargetBig Query.';
             let outputURL = 'gs://url_' + Math.random().toString(35).substring(7);
             lookups.url_data[outputURL] = outputData;
-            return '';
+            return outputURL;
         },
     
     }

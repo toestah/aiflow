@@ -5,7 +5,7 @@ const cloudFunctions = require('./cloudFunctions.js');
 const lookups = require('./lookups.js')
 
 //read JSON and parse to JS object, in the real app this should be extracted from database
-let rawdata = fs.readFileSync('data/flowData.json');
+let rawdata = fs.readFileSync('data/flowData2.json');
 let flowData = JSON.parse(rawdata);
 
 //this function takes the raw "flowData" and returns a data object that contains all Nodes with referential links as a tree structure (see Node class)
